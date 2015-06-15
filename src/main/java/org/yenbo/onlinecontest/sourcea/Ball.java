@@ -106,21 +106,40 @@ public class Ball {
 				movePattern[m] = tmp;
 			}
 			
-			// mark ignore moves
-			for (int i = 0; i < movePattern.length; i++) {
-				
-				if (i == movePattern[i]) {
-					movePattern[i] = -1;
-				}
-			}
+			int duplicatedAt = -1;
 			
 			for (int i = 0; i < numOfOpeations; i++) {
 				
 				int[] previous = Arrays.copyOf(balls, balls.length);
 				
 				for (int j = 0; j < movePattern.length; j++) {
+					balls[j] = previous[movePattern[j]];
+				}
+				
+				if (balls[0] == 1 &&
+						balls[1] == 2 &&
+						balls[2] == 3 &&
+						balls[3] == 4 &&
+						balls[4] == 5 &&
+						balls[5] == 6 &&
+						balls[6] == 7 &&
+						balls[7] == 8) {
+					// if the move is duplicated, find a way to skip pointless moves.
+					duplicatedAt = i;
+					break;
+				}
+			}
+			
+			if (duplicatedAt != -1) {
+			
+				balls = new int[] {1, 2, 3, 4, 5, 6, 7, 8};
+				int steps = numOfOpeations % (duplicatedAt + 1);
+				
+				for (int i = 0; i < steps; i++) {
 					
-					if (movePattern[j] != -1) {
+					int[] previous = Arrays.copyOf(balls, balls.length);
+					
+					for (int j = 0; j < movePattern.length; j++) {
 						balls[j] = previous[movePattern[j]];
 					}
 				}
