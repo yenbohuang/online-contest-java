@@ -1,6 +1,7 @@
 package org.yenbo.onlinecontest.sourcea;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 import org.junit.Assert;
@@ -91,23 +92,37 @@ public class Ball {
 			int[] balls = new int[] {1, 2, 3, 4, 5, 6, 7, 8};
 			int numOfSets = inputFromConsole.size();
 			
-			int[][] movePattern = new int[numOfSets][2];
+			int[] movePattern = new int[] {0, 1, 2, 3, 4, 5, 6, 7};
 			
 			for (int i = 0; i < numOfSets; i++) {
 				
 				String[] tokens = inputFromConsole.get(i).split(" ");
 				
-				movePattern[i][0] = Integer.parseInt(tokens[0]);
-				movePattern[i][1] = Integer.parseInt(tokens[1]);
+				int m = Integer.parseInt(tokens[0]) - 1;
+				int n = Integer.parseInt(tokens[1]) - 1;
+				
+				int tmp = movePattern[n];
+				movePattern[n] = movePattern[m];
+				movePattern[m] = tmp;
+			}
+			
+			// mark ignore moves
+			for (int i = 0; i < movePattern.length; i++) {
+				
+				if (i == movePattern[i]) {
+					movePattern[i] = -1;
+				}
 			}
 			
 			for (int i = 0; i < numOfOpeations; i++) {
 				
-				for (int j = 0; j < numOfSets; j++) {
+				int[] previous = Arrays.copyOf(balls, balls.length);
+				
+				for (int j = 0; j < movePattern.length; j++) {
 					
-					int tmp = balls[movePattern[j][0] - 1];
-					balls[movePattern[j][0] - 1] = balls[movePattern[j][1] - 1];
-					balls[movePattern[j][1] - 1] = tmp;
+					if (movePattern[j] != -1) {
+						balls[j] = previous[movePattern[j]];
+					}
 				}
 			}
 			
