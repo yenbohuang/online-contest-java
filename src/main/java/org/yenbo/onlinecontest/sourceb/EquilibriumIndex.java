@@ -45,6 +45,40 @@ public class EquilibriumIndex {
 	class Solution {
 		public int solution(int[] A) {
 			
+			// this is the answer from the blog
+			if (A == null || A.length == 0) {
+				return -1; 
+			}
+			
+			int n = A.length;
+		    double sum = 0;
+		    
+		    int i; 
+		    
+		    for (i = 0; i < n; i++) {
+		    	sum += (double) A[i];
+		    } 
+
+		    double sum_left = 0;
+		    
+		    for (i = 0; i < n; i++) {
+		    	
+		        double sum_right = sum - sum_left - (double) A[i];
+		        
+		        if (sum_left == sum_right) {
+		        	return i;
+		        }
+		        
+		        sum_left += (double) A[i];
+		    }
+		    
+		    return -1; 
+		}
+	}
+	
+	class SolutionSlow {
+		public int solution(int[] A) {
+			
 			// TODO cannot pass performance test and overflow test
 			int size = A.length;
 			
