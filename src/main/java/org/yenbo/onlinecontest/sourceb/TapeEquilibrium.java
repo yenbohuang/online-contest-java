@@ -12,6 +12,11 @@ public class TapeEquilibrium {
 		Assert.assertEquals(1, new Solution().solution(new int[] {3,1,2,4,3}));
 	}
 	
+	@Test
+	public void test2() {
+		Assert.assertEquals(2000, new Solution().solution(new int[] {-1000,1000}));
+	}
+	
 	class Solution {
 		
 	    public int solution(int[] A) {
@@ -21,32 +26,25 @@ public class TapeEquilibrium {
 	    	}
 	    	
 	    	int size = A.length;
-	    	BigInteger min = BigInteger.valueOf(0);
+	    	BigInteger sum = BigInteger.valueOf(0);
 	    	
 	    	for (int i = 0; i < size; i++) {
-	    		min = min.add(BigInteger.valueOf(A[i]));
+	    		sum = sum.add(BigInteger.valueOf(A[i]));
 	    	}
 	    	
-	    	min = BigInteger.valueOf(0).subtract(min).abs();
+	    	BigInteger leftSum = BigInteger.valueOf(A[0]);
+	    	BigInteger min = leftSum.subtract(sum.subtract(leftSum)).abs();
 	    	
 	    	for (int i = 1; i < size; i++) {
 	    		
-	    		BigInteger leftSum = BigInteger.valueOf(0);
-	    		
-	    		for (int j = 0; j < i; j++) {
-	    			leftSum = leftSum.add(BigInteger.valueOf(A[j]));
-	    		}
-	    		
-	    		BigInteger rightSum = BigInteger.valueOf(0);
-	    		
-	    		for (int j = i; j < size; j++) {
-	    			rightSum = rightSum.add(BigInteger.valueOf(A[j]));
-	    		}
+	    		BigInteger rightSum = sum.subtract(leftSum);
 	    		
 	    		BigInteger tmp = leftSum.subtract(rightSum).abs();
 	    		if (tmp.compareTo(min) == -1) {
 	    			min = tmp;
 	    		}
+	    		
+	    		leftSum = leftSum.add(BigInteger.valueOf(A[i]));
 	    	}
 	    	
 	    	return min.intValue();

@@ -64,32 +64,4 @@ public class EquilibriumIndex {
 		    return -1; 
 		}
 	}
-	
-	class SolutionSlow {
-		public int solution(int[] A) {
-			
-			// TODO cannot pass performance test and overflow test
-			int size = A.length;
-			
-			for (int i = 0; i < size; i++) {
-				
-				int leftSum = 0;
-				int rightSum = 0;
-				
-				for (int j = 0; j < i; j++) {
-					leftSum += A[j];
-				}
-				
-				for (int j = i + 1; j < size; j++) {
-					rightSum += A[j];
-				}
-				
-				if (leftSum == rightSum) {
-					return i;
-				}
-			}
-			
-			return -1;
-		}
-	}
 }
