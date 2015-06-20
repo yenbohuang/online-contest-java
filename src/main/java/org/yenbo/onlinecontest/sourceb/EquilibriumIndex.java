@@ -10,18 +10,7 @@ public class EquilibriumIndex {
 	@Test
 	public void test1() {
 
-		int[] A = new int[8];
-
-		A[0] = -1;
-		A[1] = 3;
-		A[2] = -4;
-		A[3] = 5;
-		A[4] = 1;
-		A[5] = -6;
-		A[6] = 2;
-		A[7] = 1;
-
-		Assert.assertEquals(1, new Solution().solution(A));
+		Assert.assertEquals(1, new Solution().solution(new int[] {-1,3,-4,5,1,-6,2,1}));
 	}
 	
 	@Test
