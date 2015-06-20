@@ -1,5 +1,7 @@
 package org.yenbo.onlinecontest.sourceb;
 
+import java.math.BigInteger;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -51,25 +53,23 @@ public class EquilibriumIndex {
 			}
 			
 			int n = A.length;
-		    double sum = 0;
+		    BigInteger sum = BigInteger.valueOf(0);
 		    
-		    int i; 
-		    
-		    for (i = 0; i < n; i++) {
-		    	sum += (double) A[i];
+		    for (int i = 0; i < n; i++) {
+		    	sum = sum.add(BigInteger.valueOf(A[i]));
 		    } 
 
-		    double sum_left = 0;
+		    BigInteger sum_left = BigInteger.valueOf(0);
 		    
-		    for (i = 0; i < n; i++) {
+		    for (int i = 0; i < n; i++) {
 		    	
-		        double sum_right = sum - sum_left - (double) A[i];
+		        BigInteger sum_right = sum.subtract(sum_left).subtract(BigInteger.valueOf(A[i]));
 		        
-		        if (sum_left == sum_right) {
+		        if (sum_left.equals(sum_right)) {
 		        	return i;
 		        }
 		        
-		        sum_left += (double) A[i];
+		        sum_left = sum_left.add(BigInteger.valueOf(A[i]));
 		    }
 		    
 		    return -1; 
