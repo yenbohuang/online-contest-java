@@ -1,6 +1,8 @@
 package org.yenbo.onlinecontest.sourceb;
 
 
+import java.math.BigInteger;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -14,34 +16,48 @@ public class Rectilinear {
 	class Solution {
 	    public int solution(int K, int L, int M, int N, int P, int Q, int R, int S) {
 	        
-	    	int areaA = (M-K) * (N-L);
-	    	int areaB = (R-P) * (S-Q);
+	    	BigInteger bigK = BigInteger.valueOf(K);
+	    	BigInteger bigL = BigInteger.valueOf(L);
+	    	BigInteger bigM = BigInteger.valueOf(M);
+	    	BigInteger bigN = BigInteger.valueOf(N);
+	    	BigInteger bigP = BigInteger.valueOf(P);
+	    	BigInteger bigQ = BigInteger.valueOf(Q);
+	    	BigInteger bigR = BigInteger.valueOf(R);
+	    	BigInteger bigS = BigInteger.valueOf(S);
 	    	
-	    	int interception = 0;
+	    	BigInteger areaA = bigM.subtract(bigK).multiply(bigN.subtract(bigL)); // (M-K) * (N-L)
+	    	BigInteger areaB = bigR.subtract(bigP).multiply(bigS.subtract(bigQ)); // (R-P) * (S-Q)
+	    	
+	    	BigInteger interception = BigInteger.valueOf(0);
 	    	
 	    	if (P >= K && P <= M) {
 	    		
 	    		if (S >= L && S <= N) {
 	    			// case 1
-	    			interception = (M - P) * (S - L);
+	    			interception =  bigM.subtract(bigP).multiply(bigS.subtract(bigL)); // (M - P) * (S - L)
 	    		} else if (Q >= L && Q <= N) {
 	    			// case 3
-	    			interception = (M - P) * (N - Q);
+	    			interception = bigM.subtract(bigP).multiply(bigN.subtract(bigQ)); // (M - P) * (N - Q)
 	    		}
 	    		
 	    	} else if (R >= K && R <= M) {
 	    		
 	    		if (S >= L && S <= N) {
 	    			// case 2
-	    			interception = (R - K) * (S - L);
+	    			interception = bigR.subtract(bigK).multiply(bigS.subtract(bigL)); //(R - K) * (S - L);
 	    		} else if (Q >= L && Q <= N) {
 	    			// case 4
-	    			interception = (R - K) * (N - Q);
+	    			interception = bigR.subtract(bigK).multiply(bigN.subtract(bigQ)); // (R - K) * (N - Q);
 	    		}
 	    	}
 	    	
-	    	// TODO overflow
-	    	return areaA + areaB - interception;
+	    	BigInteger answer = areaA.add(areaB).subtract(interception); // areaA + areaB - interception
+	    	
+	    	if (answer.compareTo(BigInteger.valueOf(2147483647L)) == 1) {
+	    		return -1;
+	    	} else {
+				return answer.intValue();
+			}
 	    }
 	}
 }
