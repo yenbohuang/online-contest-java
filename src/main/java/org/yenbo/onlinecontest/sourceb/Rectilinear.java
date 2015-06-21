@@ -38,6 +38,11 @@ public class Rectilinear {
 		Assert.assertEquals(175, new Solution().solution(5,0,15,10,0,5,10,15));
 	}
 	
+	@Test
+	public void test7() {
+		Assert.assertEquals(-1, new Solution().solution(-2147483647, -2147483647, 0, 0, 0, 0, 2147483647, 2147483647));
+	}
+	
 	class Solution {
 	    public int solution(int K, int L, int M, int N, int P, int Q, int R, int S) {
 	        
