@@ -13,6 +13,31 @@ public class Rectilinear {
 		Assert.assertEquals(42, new Solution().solution(-4, 1, 2, 6, 0, -1, 4, 3));
 	}
 	
+	@Test
+	public void test2() {
+		Assert.assertEquals(200, new Solution().solution(0, 0, 10, 10, 12,0,22,10));
+	}
+	
+	@Test
+	public void test3() {
+		Assert.assertEquals(175, new Solution().solution(0,5,10,15,5,0,15,10));
+	}
+	
+	@Test
+	public void test4() {
+		Assert.assertEquals(175, new Solution().solution(5,5,15,15,0,0,10,10));
+	}
+	
+	@Test
+	public void test5() {
+		Assert.assertEquals(175, new Solution().solution(0,0,10,10,5,5,15,15));
+	}
+	
+	@Test
+	public void test6() {
+		Assert.assertEquals(175, new Solution().solution(5,0,15,10,0,5,10,15));
+	}
+	
 	class Solution {
 	    public int solution(int K, int L, int M, int N, int P, int Q, int R, int S) {
 	        
