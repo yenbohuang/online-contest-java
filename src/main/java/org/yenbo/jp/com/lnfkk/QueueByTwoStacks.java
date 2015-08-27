@@ -37,26 +37,32 @@ public class QueueByTwoStacks {
 		}
 	}
 	
+	private void test(ArrayList<String> data) {
+		
+		Queue<String> queue = new PriorityQueue<String>();
+		queue.addAll(data);
+		
+		MyQueue myQueue = new MyQueue(data);
+		
+		int size = data.size();
+		
+		for (int i = 0; i < size; i++) {
+			
+			String s = queue.poll();
+			Assert.assertEquals(s, myQueue.poll());
+			System.out.println(String.format("%d : %s", i, s));
+		}
+		
+		System.out.println("-----------------");
+	}
+	
 	@Test
 	public void test1() {
 		
 		ArrayList<String> data = new ArrayList<String>();
 		data.add("a");
 		
-		Queue<String> queue = new PriorityQueue<String>();
-		for (String s: data) {
-			queue.add(s);
-		}
-		
-		MyQueue myQueue = new MyQueue(data);
-		
-		for (String s: data) {
-			Assert.assertEquals(s, queue.poll());
-			Assert.assertEquals(s, myQueue.poll());
-			System.out.println(s);
-		}
-		
-		System.out.println("-----------------");
+		test(data);
 	}
 	
 	@Test
@@ -66,20 +72,7 @@ public class QueueByTwoStacks {
 		data.add("a");
 		data.add("b");
 		
-		Queue<String> queue = new PriorityQueue<String>();
-		for (String s: data) {
-			queue.add(s);
-		}
-		
-		MyQueue myQueue = new MyQueue(data);
-		
-		for (String s: data) {
-			Assert.assertEquals(s, queue.poll());
-			Assert.assertEquals(s, myQueue.poll());
-			System.out.println(s);
-		}
-		
-		System.out.println("-----------------");
+		test(data);
 	}
 	
 	@Test
@@ -90,19 +83,6 @@ public class QueueByTwoStacks {
 		data.add("b");
 		data.add("c");
 		
-		Queue<String> queue = new PriorityQueue<String>();
-		for (String s: data) {
-			queue.add(s);
-		}
-		
-		MyQueue myQueue = new MyQueue(data);
-		
-		for (String s: data) {
-			Assert.assertEquals(s, queue.poll());
-			Assert.assertEquals(s, myQueue.poll());
-			System.out.println(s);
-		}
-		
-		System.out.println("-----------------");
+		test(data);
 	}
 }
