@@ -1,3 +1,4 @@
+package org.yenbo.jp.com.id;
 //package org.yenbo.onlinecontest.sourcea;
 //
 //import java.util.ArrayList;

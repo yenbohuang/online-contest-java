@@ -1,4 +1,4 @@
-package org.yenbo.onlinecontest.sourceb;
+package org.yenbo.jp.com.rkt;
 
 
 import java.math.BigInteger;

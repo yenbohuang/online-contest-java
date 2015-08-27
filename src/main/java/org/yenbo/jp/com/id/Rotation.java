@@ -1,4 +1,4 @@
-package org.yenbo.onlinecontest.sourcea;
+package org.yenbo.jp.com.id;
 
 import java.util.ArrayList;
 import java.util.Scanner;
