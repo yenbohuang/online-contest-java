@@ -1,4 +1,4 @@
-package org.yenbo.linecode.todo.easy;
+package org.yenbo.leetcode.todo.easy;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

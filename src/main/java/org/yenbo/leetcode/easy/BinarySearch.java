@@ -1,4 +1,4 @@
-package org.yenbo.lintcode.easy;
+package org.yenbo.leetcode.easy;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -20,6 +20,11 @@ public class BinarySearch {
 		Assert.assertEquals(2, binarySearch(new int[] {1, 2, 3, 3, 4, 5, 10}, 3));
 	}
 	
+	@Test
+	public void test4() {
+		Assert.assertEquals(1, binarySearch(new int[] {2,5}, 5));
+	}
+	
 	public int binarySearch(int[] nums, int target) {
         
 		int answer = -1;
@@ -28,6 +33,10 @@ public class BinarySearch {
 			if (nums[0] == target) {
 				answer = 0;
 			}
+		} else if (nums[0] == target) {
+			return 0;
+		} else if (nums[nums.length - 1] == target) {
+			return nums.length - 1;
 		} else {
 			
 			int start = 0;
