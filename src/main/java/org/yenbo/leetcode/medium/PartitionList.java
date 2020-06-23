@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.yenbo.leetcode.domain.ListNode;
+import org.yenbo.leetcode.ListNode;
 
 /**
  * https://leetcode.com/problems/partition-list/

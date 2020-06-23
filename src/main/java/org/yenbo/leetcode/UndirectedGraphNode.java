@@ -1,4 +1,4 @@
-package org.yenbo.leetcode.domain;
+package org.yenbo.leetcode;
 
 import java.util.ArrayList;
 import java.util.List;

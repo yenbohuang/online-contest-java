@@ -1,4 +1,4 @@
-package org.yenbo.lintcode.util;
+package org.yenbo.leetcode;
 
 import org.junit.Assert;
 import org.junit.Test;

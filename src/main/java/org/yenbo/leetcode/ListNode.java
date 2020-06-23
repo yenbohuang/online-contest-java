@@ -1,4 +1,4 @@
-package org.yenbo.leetcode.domain;
+package org.yenbo.leetcode;
 
 public class ListNode {
 

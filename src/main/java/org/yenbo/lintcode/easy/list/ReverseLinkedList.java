@@ -2,7 +2,7 @@ package org.yenbo.lintcode.easy.list;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.yenbo.leetcode.domain.ListNode;
+import org.yenbo.leetcode.ListNode;
 
 public class ReverseLinkedList {
 

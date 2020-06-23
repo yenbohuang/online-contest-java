@@ -1,11 +1,16 @@
-package org.yenbo.lintcode.easy;
+package org.yenbo.leetcode.easy;
 
 import java.util.ArrayList;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.yenbo.lintcode.util.SafeMath;
+import org.yenbo.leetcode.SafeMath;
 
+/**
+ * https://leetcode.com/problems/reverse-integer/
+ * @author user
+ *
+ */
 public class ReverseInteger {
 
 	@Test
@@ -16,6 +21,11 @@ public class ReverseInteger {
 	@Test
 	public void test2() {
 		Assert.assertEquals(-321, reverseInteger(-123));
+	}
+	
+	@Test
+	public void test3() {
+		Assert.assertEquals(21, reverseInteger(120));
 	}
 	
 	public int reverseInteger(int n) {

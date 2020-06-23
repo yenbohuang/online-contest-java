@@ -1,13 +1,23 @@
-package org.yenbo.lintcode.easy;
+package org.yenbo.leetcode.medium;
 
 import org.junit.Assert;
 import org.junit.Test;
 
+/**
+ * https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/
+ * @author user
+ *
+ */
 public class RemoveDuplicatesFromSortedArray2 {
 
 	@Test
-	public void test() {
+	public void test1() {
 		Assert.assertEquals(5, removeDuplicates(new int[] {1,1,1,2,2,3}));
+	}
+	
+	@Test
+	public void test2() {
+		Assert.assertEquals(7, removeDuplicates(new int[] {0,0,1,1,1,1,2,3,3}));
 	}
 	
 	public int removeDuplicates(int[] nums) {

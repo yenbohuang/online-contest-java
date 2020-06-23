@@ -5,7 +5,7 @@ import java.util.HashSet;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.yenbo.leetcode.domain.UndirectedGraphNode;
+import org.yenbo.leetcode.UndirectedGraphNode;
 
 public class CloneGraph {
 	@Test
