@@ -1,4 +1,4 @@
-package org.yenbo.leetcode.todo.easy;
+package org.yenbo.leetcode.todo.missing;
 
 import java.math.BigInteger;
 

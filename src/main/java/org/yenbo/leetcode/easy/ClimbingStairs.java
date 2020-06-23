@@ -1,11 +1,12 @@
-package org.yenbo.lintcode.easy;
+package org.yenbo.leetcode.easy;
 
 import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * This one is not easy. So, I Googled. :p
+ * https://leetcode.com/problems/climbing-stairs/submissions/
  * 
+ * This one is not easy. So, I Googled. :p
  * http://www.glassdoor.com/Interview/You-are-climbing-a-stair-case-Each-time-you-can-either-make-1-step-or-2-steps-The-staircase-has-n-steps-In-how-many-dist-QTN_133071.htm
  * 
  * @author YENBO.HUANG

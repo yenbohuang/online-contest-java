@@ -1,4 +1,4 @@
-package org.yenbo.lintcode.easy;
+package org.yenbo.leetcode.todo.missing;
 
 import java.util.Arrays;
 

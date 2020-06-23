@@ -1,8 +1,13 @@
-package org.yenbo.lintcode.easy;
+package org.yenbo.leetcode.todo.easy;
 
 import org.junit.Assert;
 import org.junit.Test;
 
+/**
+ * https://leetcode.com/problems/longest-continuous-increasing-subsequence/
+ * @author user
+ *
+ */
 public class LongestIncreasingContinuousSubsequence {
 
 	@Test
@@ -29,6 +34,18 @@ public class LongestIncreasingContinuousSubsequence {
 				new int[] {1}));
 	}
 	
+	@Test
+	public void test5() {
+		Assert.assertEquals(3, longestIncreasingContinuousSubsequence(
+				new int[] {1,3,5,4,7}));
+	}
+	
+	@Test
+	public void test6() {
+		Assert.assertEquals(1, longestIncreasingContinuousSubsequence(
+				new int[] {2,2,2,2,2}));
+	}
+	
 	public int longestIncreasingContinuousSubsequence(int[] A) {
         
 		int answer = 0;
@@ -43,7 +60,7 @@ public class LongestIncreasingContinuousSubsequence {
 			
 			for (int i = 1; i < size; i++) {
 				
-				if (A[i] >= A[i - 1]) {
+				if (A[i] > A[i - 1]) {
 					
 					increasing++;
 					
@@ -54,7 +71,7 @@ public class LongestIncreasingContinuousSubsequence {
 					increasing = 1;
 				}
 				
-				if (A[i] <= A[i - 1]) {
+				if (A[i] < A[i - 1]) {
 					
 					decreasing++;
 					

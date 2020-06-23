@@ -3,6 +3,11 @@ package org.yenbo.leetcode.easy;
 import org.junit.Assert;
 import org.junit.Test;
 
+/**
+ * https://leetcode.com/problems/binary-search/
+ * @author user
+ *
+ */
 public class BinarySearch {
 
 	@Test

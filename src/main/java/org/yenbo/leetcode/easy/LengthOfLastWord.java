@@ -1,8 +1,13 @@
-package org.yenbo.lintcode.easy;
+package org.yenbo.leetcode.easy;
 
 import org.junit.Assert;
 import org.junit.Test;
 
+/**
+ * https://leetcode.com/problems/length-of-last-word/
+ * @author user
+ *
+ */
 public class LengthOfLastWord {
 
 	@Test

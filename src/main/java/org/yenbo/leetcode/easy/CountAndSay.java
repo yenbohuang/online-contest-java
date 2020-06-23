@@ -1,8 +1,13 @@
-package org.yenbo.lintcode.easy;
+package org.yenbo.leetcode.easy;
 
 import org.junit.Assert;
 import org.junit.Test;
 
+/**
+ * https://leetcode.com/problems/count-and-say/
+ * @author user
+ *
+ */
 public class CountAndSay {
 
 	@Test
