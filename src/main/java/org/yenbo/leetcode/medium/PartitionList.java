@@ -1,15 +1,20 @@
-package org.yenbo.lintcode.easy;
+package org.yenbo.leetcode.medium;
 
 import java.util.ArrayList;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.yenbo.lintcode.domain.ListNode;
+import org.yenbo.leetcode.domain.ListNode;
 
+/**
+ * https://leetcode.com/problems/partition-list/
+ * @author user
+ *
+ */
 public class PartitionList {
 
 	@Test
-	public void test() {
+	public void test1() {
 		
 		// 1->4->3->2->5->2
 		ListNode head = new ListNode(1);

@@ -1,10 +1,15 @@
-package org.yenbo.lintcode.easy;
+package org.yenbo.leetcode.easy;
 
 import java.util.ArrayList;
 
 import org.junit.Assert;
 import org.junit.Test;
 
+/**
+ * https://leetcode.com/problems/plus-one/
+ * @author user
+ *
+ */
 public class PlusOne {
 
 	@Test
@@ -19,6 +24,13 @@ public class PlusOne {
 		
 		int[] digits = new int[] {9};
 		Assert.assertArrayEquals(new int[] {1, 0}, plusOne(digits));
+	}
+	
+	@Test
+	public void test3() {
+		
+		int[] digits = new int[] {4,3,2,1};
+		Assert.assertArrayEquals(new int[] {4,3,2,2}, plusOne(digits));
 	}
 	
 	public int[] plusOne(int[] digits) {

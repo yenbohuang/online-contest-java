@@ -1,8 +1,13 @@
-package org.yenbo.lintcode.easy;
+package org.yenbo.leetcode.easy;
 
 import org.junit.Assert;
 import org.junit.Test;
 
+/**
+ * https://leetcode.com/problems/power-of-two/
+ * @author user
+ *
+ */
 public class O1CheckPowerOf2 {
 
 	@Test
@@ -23,6 +28,21 @@ public class O1CheckPowerOf2 {
 	@Test
 	public void test4() {
 		Assert.assertFalse(checkPowerOf2(-1));
+	}
+	
+	@Test
+	public void test5() {
+		Assert.assertTrue(checkPowerOf2(1));
+	}
+	
+	@Test
+	public void test6() {
+		Assert.assertTrue(checkPowerOf2(16));
+	}
+	
+	@Test
+	public void test7() {
+		Assert.assertFalse(checkPowerOf2(218));
 	}
 	
 	public boolean checkPowerOf2(int n) {
