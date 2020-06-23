@@ -1,18 +1,33 @@
-package org.yenbo.lintcode.easy;
+package org.yenbo.leetcode.easy;
 
 import java.util.Arrays;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-public class TwoStringsAreAnagrams {
+/**
+ * https://leetcode.com/problems/valid-anagram/
+ * @author user
+ *
+ */
+public class ValidAnagrams {
 
 	@Test
-	public void test() {
-		Assert.assertTrue(anagram("abcd", "dcab"));;
+	public void test1() {
+		Assert.assertTrue(isAnagram("abcd", "dcab"));;
 	}
 	
-	public boolean anagram(String s, String t) {
+	@Test
+	public void test2() {
+		Assert.assertTrue(isAnagram("anagram", "nagaram"));;
+	}
+	
+	@Test
+	public void test3() {
+		Assert.assertFalse(isAnagram("rat", "car"));;
+	}
+	
+	public boolean isAnagram(String s, String t) {
         
 		// handle simple cases
 		if (s == null && t== null) {

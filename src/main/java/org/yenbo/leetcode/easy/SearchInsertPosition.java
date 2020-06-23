@@ -1,8 +1,13 @@
-package org.yenbo.lintcode.easy;
+package org.yenbo.leetcode.easy;
 
 import org.junit.Assert;
 import org.junit.Test;
 
+/**
+ * https://leetcode.com/problems/search-insert-position/
+ * @author user
+ *
+ */
 public class SearchInsertPosition {
 
 	@Test
@@ -25,19 +30,19 @@ public class SearchInsertPosition {
 		Assert.assertEquals(0, searchInsert(new int[] {1,3,5,6}, 0));
 	}
 	
-	public int searchInsert(int[] A, int target) {
+	public int searchInsert(int[] nums, int target) {
         
-		if (A == null || A.length == 0 || A[0] >= target) {
+		if (nums == null || nums.length == 0 || nums[0] >= target) {
 			return 0;
 		}
 		
-		for (int i = 1; i < A.length; i++) {
+		for (int i = 1; i < nums.length; i++) {
 			
-			if (A[i] >= target) {
+			if (nums[i] >= target) {
 				return i;
 			}
 		}
 		
-		return A.length;
+		return nums.length;
     }
 }

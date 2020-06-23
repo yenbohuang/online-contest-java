@@ -1,4 +1,4 @@
-package org.yenbo.lintcode.easy;
+package org.yenbo.lintcode;
 
 import java.util.Arrays;
 

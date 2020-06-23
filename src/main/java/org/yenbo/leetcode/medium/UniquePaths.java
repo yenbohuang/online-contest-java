@@ -1,7 +1,25 @@
-package org.yenbo.lintcode.easy;
+package org.yenbo.leetcode.medium;
 
+import org.junit.Assert;
+import org.junit.Test;
+
+/**
+ * https://leetcode.com/problems/unique-paths/
+ * @author user
+ *
+ */
 public class UniquePaths {
 
+	@Test
+	public void test1() {
+		Assert.assertEquals(3, uniquePaths(3, 2));
+	}
+	
+	@Test
+	public void test2() {
+		Assert.assertEquals(28, uniquePaths(7, 3));
+	}
+	
 	public int uniquePaths(int m, int n) {
         
 		// https://en.wikipedia.org/wiki/Dynamic_programming

@@ -1,4 +1,4 @@
-package org.yenbo.leetcode.todo.missing;
+package org.yenbo.lintcode;
 
 import org.junit.Assert;
 import org.junit.Test;

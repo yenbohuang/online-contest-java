@@ -1,8 +1,13 @@
-package org.yenbo.lintcode.easy;
+package org.yenbo.leetcode.easy;
 
 import org.junit.Assert;
 import org.junit.Test;
 
+/**
+ * https://leetcode.com/problems/sqrtx/
+ * @author user
+ *
+ */
 public class Sqrt {
 
 	@Test
@@ -35,6 +40,11 @@ public class Sqrt {
 		Assert.assertEquals(11, sqrt(121));
 	}
 	
+	@Test
+	public void test7() {
+		Assert.assertEquals(2, sqrt(8));
+	}
+	
 	public int sqrt(int x) {
 		
 		// https://en.wikipedia.org/wiki/Methods_of_computing_square_roots
@@ -42,8 +52,9 @@ public class Sqrt {
 	    int bit = 1 << 30; // The second-to-top bit is set: 1 << 30 for 32 bits
 	 
 	    // "bit" starts at the highest power of four <= the argument.
-	    while (bit > x)
+	    while (bit > x) {
 	        bit >>= 2;
+	    }
 	 
 	    while (bit != 0) {
 	        if (x >= res + bit) {
@@ -58,19 +69,19 @@ public class Sqrt {
 	}
 
 	
-	public int sqrtSlowVersion(int x) {
-        
-		// TODO Time Limit Exceeded
-		int answer = 1;
-		
-		while (answer * answer < x) {
-			answer++;
-		}
-		
-		if (answer * answer > x) {
-			return answer - 1;
-		} else {
-			return answer;
-		}
-    }
+//	public int sqrtSlowVersion(int x) {
+//        
+//		// TODO Time Limit Exceeded
+//		int answer = 1;
+//		
+//		while (answer * answer < x) {
+//			answer++;
+//		}
+//		
+//		if (answer * answer > x) {
+//			return answer - 1;
+//		} else {
+//			return answer;
+//		}
+//    }
 }
