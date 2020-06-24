@@ -1,4 +1,4 @@
-package org.yenbo.lintcode.easy.list;
+package org.yenbo.lintcode;
 
 import org.junit.Assert;
 import org.junit.Test;

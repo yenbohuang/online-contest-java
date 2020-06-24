@@ -1,10 +1,15 @@
-package org.yenbo.lintcode.easy.list;
+package org.yenbo.leetcode.easy;
 
 import org.junit.Assert;
 import org.junit.Test;
 import org.yenbo.leetcode.ListNode;
 
-public class DeleteNodeInTheMiddleOfSinglyLinkedList {
+/**
+ * https://leetcode.com/problems/delete-node-in-a-linked-list/
+ * @author user
+ *
+ */
+public class DeleteNodeInALinkedList {
 
 	@Test
 	public void test() {

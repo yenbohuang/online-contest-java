@@ -1,9 +1,14 @@
-package org.yenbo.lintcode.easy.list;
+package org.yenbo.leetcode.easy;
 
 import org.junit.Assert;
 import org.junit.Test;
 import org.yenbo.leetcode.ListNode;
 
+/**
+ * https://leetcode.com/problems/merge-two-sorted-lists/
+ * @author user
+ *
+ */
 public class MergeTwoSortedLists {
 
 	@Test
@@ -39,15 +44,12 @@ public class MergeTwoSortedLists {
     
 		ListNode answer = null;
 		
-		if (l1 == null) {
+		if (l1 == null || l2 == null) {
 			
-			// copy second list
-			answer = new ListNode(l2.val);
-			ListNode answerCurrent2 = answer;
-			
-			for (ListNode current = l2; current.next != null; current = current.next) {
-				answerCurrent2.next = new ListNode(current.next.val);
-				answerCurrent2 = answerCurrent2.next;
+			if (l1 == null) {
+				answer = l2;
+			} else if (l2 == null) {
+				answer = l1;
 			}
 			
 		} else {

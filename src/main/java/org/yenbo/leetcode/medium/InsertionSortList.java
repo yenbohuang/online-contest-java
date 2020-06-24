@@ -1,9 +1,14 @@
-package org.yenbo.lintcode.easy.list;
+package org.yenbo.leetcode.medium;
 
 import org.junit.Assert;
 import org.junit.Test;
 import org.yenbo.leetcode.ListNode;
 
+/**
+ * https://leetcode.com/problems/insertion-sort-list/
+ * @author user
+ *
+ */
 public class InsertionSortList {
 
 	@Test
@@ -27,7 +32,20 @@ public class InsertionSortList {
 		Assert.assertEquals("0->1->2->3", insertionSortList(root).toString());
 	}
 	
+	@Test
+	public void test3() {
+		Assert.assertNull(insertionSortList(null));
+	}
+	
 	public ListNode insertionSortList(ListNode head) {
+		
+		if (head == null) {
+			return null;
+		}
+		
+		if (head.next == null) {
+			return head;
+		}
 
 		ListNode newRoot = new ListNode(head.val);
 		ListNode srcNode = head.next;

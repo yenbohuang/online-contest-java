@@ -1,9 +1,14 @@
-package org.yenbo.lintcode.easy.list;
+package org.yenbo.leetcode.medium;
 
 import org.junit.Assert;
 import org.junit.Test;
 import org.yenbo.leetcode.ListNode;
 
+/**
+ * https://leetcode.com/problems/remove-nth-node-from-end-of-list/
+ * @author user
+ *
+ */
 public class RemoveNthNodeFromEndOfList {
 
 	@Test

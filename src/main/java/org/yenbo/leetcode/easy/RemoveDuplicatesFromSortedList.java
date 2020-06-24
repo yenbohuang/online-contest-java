@@ -1,9 +1,14 @@
-package org.yenbo.lintcode.easy.list;
+package org.yenbo.leetcode.easy;
 
 import org.junit.Assert;
 import org.junit.Test;
 import org.yenbo.leetcode.ListNode;
 
+/**
+ * https://leetcode.com/problems/remove-duplicates-from-sorted-list/
+ * @author user
+ *
+ */
 public class RemoveDuplicatesFromSortedList {
 
 	@Test
