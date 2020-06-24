@@ -1,25 +1,7 @@
 package org.yenbo.leetcode;
 
-import org.junit.Assert;
-import org.junit.Test;
+public abstract class AbstractSafeMath {
 
-public class SafeMath {
-
-	@Test
-	public void testSafeAdd() {
-		Assert.assertEquals(99 + 23, safeAdd(99, 23));
-	}
-	
-	@Test
-	public void testSafeMultiply() {
-		Assert.assertEquals(9 * 23, safeMultiply(9, 23));
-	}
-	
-	@Test
-	public void testSafePower() {
-		Assert.assertEquals(Math.pow(33, 5), safePower(33, 5), 0.1);
-	}
-	
 	/**
 	 * Copied from:
 	 * https://www.securecoding.cert.org/confluence/display/java/NUM00-J.+Detect+or+prevent+integer+overflow
@@ -29,7 +11,7 @@ public class SafeMath {
 	 * @return
 	 * @throws ArithmeticException
 	 */
-	public static final int safeAdd(int left, int right) throws ArithmeticException {
+	protected int safeAdd(int left, int right) throws ArithmeticException {
 		if (right > 0 ? left > Integer.MAX_VALUE - right
 				: left < Integer.MIN_VALUE - right) {
 			throw new ArithmeticException("Integer overflow");
@@ -46,7 +28,7 @@ public class SafeMath {
 	 * @return
 	 * @throws ArithmeticException
 	 */
-	public static final int safeMultiply(int left, int right)
+	protected int safeMultiply(int left, int right)
 			throws ArithmeticException {
 		if (right > 0 ? left > Integer.MAX_VALUE / right
 				|| left < Integer.MIN_VALUE / right
@@ -58,7 +40,7 @@ public class SafeMath {
 		return left * right;
 	}
 	
-	public static final int safePower(int value, int n) {
+	protected int safePower(int value, int n) {
 		
 		int result = 1;
 		

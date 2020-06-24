@@ -4,14 +4,14 @@ import java.util.ArrayList;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.yenbo.leetcode.SafeMath;
+import org.yenbo.leetcode.AbstractSafeMath;
 
 /**
  * https://leetcode.com/problems/reverse-integer/
  * @author user
  *
  */
-public class ReverseInteger {
+public class ReverseInteger extends AbstractSafeMath {
 
 	@Test
 	public void test1() {
@@ -47,7 +47,7 @@ public class ReverseInteger {
 		
 		try {
 			for (int i : list) {
-				answer = SafeMath.safeAdd(SafeMath.safeMultiply(answer, 10), i);
+				answer = safeAdd(safeMultiply(answer, 10), i);
 			}
 		} catch (ArithmeticException ex) {
 			return 0;

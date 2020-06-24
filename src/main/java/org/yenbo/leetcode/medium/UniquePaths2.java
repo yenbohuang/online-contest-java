@@ -1,18 +1,33 @@
-package org.yenbo.lintcode.easy;
+package org.yenbo.leetcode.medium;
 
 import org.junit.Assert;
 import org.junit.Test;
 
+/**
+ * https://leetcode.com/problems/unique-paths-ii/
+ * @author user
+ *
+ */
 public class UniquePaths2 {
 
 	@Test
 	public void test1() {
-		Assert.assertEquals(2, uniquePathsWithObstacles(new int[][] {{0,0,0},{0,1,0},{0,0,0}}));
+		Assert.assertEquals(2, uniquePathsWithObstacles(new int[][] {
+			{0,0,0},
+			{0,1,0},
+			{0,0,0}
+			}));
 	}
 	
 	@Test
 	public void test2() {
-		Assert.assertEquals(3, uniquePathsWithObstacles(new int[][] {{0,0},{0,0},{0,0},{1,0},{0,0}}));
+		Assert.assertEquals(3, uniquePathsWithObstacles(new int[][] {
+			{0,0},
+			{0,0},
+			{0,0},
+			{1,0},
+			{0,0}
+			}));
 	}
 	
 	public int uniquePathsWithObstacles(int[][] obstacleGrid) {
