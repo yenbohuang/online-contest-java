@@ -1,11 +1,17 @@
-package org.yenbo.lintcode.easy.tree;
+package org.yenbo.leetcode.medium;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.yenbo.lintcode.domain.TreeNode;
+import org.yenbo.leetcode.TreeNode;
 
+/**
+ * https://leetcode.com/problems/binary-tree-preorder-traversal/
+ * @author user
+ *
+ */
 public class BinaryTreePreorderTraversal {
 	
 	@Test
@@ -19,9 +25,9 @@ public class BinaryTreePreorderTraversal {
 		
 	}
 	
-	public ArrayList<Integer> preorderTraversal(TreeNode root) {
+	public List<Integer> preorderTraversal(TreeNode root) {
         
-		ArrayList<Integer> list = new ArrayList<Integer>();
+		List<Integer> list = new ArrayList<Integer>();
 		
 		if (root != null) {
 			traverse(root, list);
@@ -30,7 +36,7 @@ public class BinaryTreePreorderTraversal {
 		return list;
     }
 	
-	private void traverse(TreeNode node, ArrayList<Integer> list) {
+	private void traverse(TreeNode node, List<Integer> list) {
 		
 		list.add(node.val);
 		

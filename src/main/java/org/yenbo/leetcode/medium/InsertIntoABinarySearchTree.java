@@ -1,22 +1,25 @@
-package org.yenbo.lintcode.easy.tree;
+package org.yenbo.leetcode.medium;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.yenbo.lintcode.domain.TreeNode;
+import org.yenbo.leetcode.TreeNode;
 
-public class InsertNodeInABinarySearchTree {
+/**
+ * https://leetcode.com/problems/insert-into-a-binary-search-tree/
+ * @author user
+ *
+ */
+public class InsertIntoABinarySearchTree {
 
 	@Test
-	public void test() {
+	public void test1() {
 		
 		TreeNode root = new TreeNode(2);
 		root.left = new TreeNode(1);
 		root.right = new TreeNode(4);
 		root.right.left = new TreeNode(3);
 		
-		TreeNode node = new TreeNode(6);
-		
-		TreeNode answer = insertNode(root, node);
+		TreeNode answer = insertIntoBST(root, 6);
 		
 		Assert.assertEquals(2, answer.val);
 		
@@ -35,25 +38,25 @@ public class InsertNodeInABinarySearchTree {
 		Assert.assertNull(answer.right.right.right);
 	}
 	
-	public TreeNode insertNode(TreeNode root, TreeNode node) {
+	public TreeNode insertIntoBST(TreeNode root, int val) {
         
 		if (root == null) {
-			return node;
+			return new TreeNode(val);
 		}
 		
-		if (root.val > node.val) {
+		if (root.val > val) {
 			
 			if (root.left != null) {
-				insertNode(root.left, node);
+				insertIntoBST(root.left, val);
 			} else {
-				root.left = node;
+				root.left = new TreeNode(val);
 			}
 		} else {
 			
 			if (root.right != null) {
-				insertNode(root.right, node);
+				insertIntoBST(root.right, val);
 			} else {
-				root.right = node;
+				root.right = new TreeNode(val);
 			}
 		}
 		

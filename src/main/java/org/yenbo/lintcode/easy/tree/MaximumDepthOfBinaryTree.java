@@ -2,7 +2,7 @@ package org.yenbo.lintcode.easy.tree;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.yenbo.lintcode.domain.TreeNode;
+import org.yenbo.leetcode.TreeNode;
 
 public class MaximumDepthOfBinaryTree {
 	

@@ -1,8 +1,8 @@
-package org.yenbo.lintcode.easy.tree;
+package org.yenbo.leetcode.todo.easy;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.yenbo.lintcode.domain.TreeNode;
+import org.yenbo.leetcode.TreeNode;
 
 /**
  * http://algs4.cs.princeton.edu/32bst/
@@ -10,7 +10,7 @@ import org.yenbo.lintcode.domain.TreeNode;
  * @author YENBO.HUANG
  *
  */
-public class ConvertSortedArrayToBinarySearchTreeWithMinimalHeight {
+public class ConvertSortedArrayToBinarySearchTree {
 
 	@Test
 	public void test1() {
@@ -36,30 +36,43 @@ public class ConvertSortedArrayToBinarySearchTreeWithMinimalHeight {
 	public void test3() {
 		Assert.assertNull(sortedArrayToBST(new int[0]));
 	}
+	
+	@Test
+	public void test4() {
+	
+		TreeNode root = sortedArrayToBST(new int[] {-10,-3,0,5,9});
+		Assert.assertEquals(0, root.val);
+		
+		Assert.assertEquals(-3, root.left.val);
+		Assert.assertEquals(-10, root.left.left.val);
+		
+		Assert.assertEquals(9, root.right.val);
+		Assert.assertEquals(5, root.right.left.val);
+	}
 
-	public TreeNode sortedArrayToBST(int[] A) {
+	public TreeNode sortedArrayToBST(int[] nums) {
 
-		if (A == null || A.length == 0) {
+		if (nums == null || nums.length == 0) {
 			return null;
 		}
 		
-		int mid = A.length / 2;
-		TreeNode root = new TreeNode(A[mid]);
+		int mid = nums.length / 2;
+		TreeNode root = new TreeNode(nums[mid]);
 		
-		construct(root, A, 0, mid - 1, true);
-		construct(root, A, mid + 1, A.length - 1, false);
+		construct(root, nums, 0, mid - 1, true);
+		construct(root, nums, mid + 1, nums.length - 1, false);
 		
 		return root;
 	}
 	
-	private void construct(TreeNode node, int[] A, int start, int end, boolean left) {
+	private void construct(TreeNode node, int[] nums, int start, int end, boolean left) {
 		
 		if (end < start) {
 			return;
 		}
 		
 		int mid = start + (end - start) / 2;
-		TreeNode newNode = new TreeNode(A[mid]);
+		TreeNode newNode = new TreeNode(nums[mid]);
 		
 		if (left) {
 			node.left = newNode;
@@ -67,7 +80,7 @@ public class ConvertSortedArrayToBinarySearchTreeWithMinimalHeight {
 			node.right = newNode;
 		}
 		
-		construct(newNode, A, start, mid - 1, true);
-		construct(newNode, A, mid + 1, end, false);
+		construct(newNode, nums, start, mid - 1, true);
+		construct(newNode, nums, mid + 1, end, false);
 	}
 }

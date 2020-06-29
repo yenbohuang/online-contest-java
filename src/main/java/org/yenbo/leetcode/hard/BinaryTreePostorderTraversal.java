@@ -1,11 +1,17 @@
-package org.yenbo.lintcode.easy.tree;
+package org.yenbo.leetcode.hard;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.yenbo.lintcode.domain.TreeNode;
+import org.yenbo.leetcode.TreeNode;
 
+/**
+ * https://leetcode.com/problems/binary-tree-postorder-traversal/
+ * @author user
+ *
+ */
 public class BinaryTreePostorderTraversal {
 	
 	@Test
@@ -19,9 +25,9 @@ public class BinaryTreePostorderTraversal {
 		
 	}
 	
-	public ArrayList<Integer> postorderTraversal(TreeNode root) {
+	public List<Integer> postorderTraversal(TreeNode root) {
 		
-		ArrayList<Integer> list = new ArrayList<Integer>();
+		List<Integer> list = new ArrayList<Integer>();
 		
 		if (root != null) {
 			traverse(root, list);
@@ -30,7 +36,7 @@ public class BinaryTreePostorderTraversal {
 		return list;
     }
 	
-	private void traverse(TreeNode node, ArrayList<Integer> list) {
+	private void traverse(TreeNode node, List<Integer> list) {
 		
 		if (node.left != null) {
 			traverse(node.left, list);
