@@ -1,11 +1,10 @@
-package org.yenbo.lintcode.medium.graph;
+package org.yenbo.lintcode;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.yenbo.lintcode.domain.DirectedGraphNode;
 
 public class TopologicalSorting {
 

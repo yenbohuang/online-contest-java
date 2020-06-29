@@ -1,4 +1,4 @@
-package org.yenbo.lintcode.domain;
+package org.yenbo.lintcode;
 
 import java.util.ArrayList;
 

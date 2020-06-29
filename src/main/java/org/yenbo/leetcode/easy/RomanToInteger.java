@@ -1,8 +1,13 @@
-package org.yenbo.lintcode.medium;
+package org.yenbo.leetcode.easy;
 
 import org.junit.Assert;
 import org.junit.Test;
 
+/**
+ * https://leetcode.com/problems/roman-to-integer/
+ * @author user
+ *
+ */
 public class RomanToInteger {
 
 	@Test

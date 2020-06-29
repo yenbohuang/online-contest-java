@@ -1,4 +1,4 @@
-package org.yenbo.lintcode.medium;
+package org.yenbo.lintcode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
