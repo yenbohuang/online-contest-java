@@ -1,10 +1,15 @@
-package org.yenbo.lintcode.easy.tree;
+package org.yenbo.leetcode.easy;
 
 import org.junit.Assert;
 import org.junit.Test;
 import org.yenbo.leetcode.TreeNode;
 
-public class Subtree {
+/**
+ * https://leetcode.com/problems/subtree-of-another-tree/
+ * @author user
+ *
+ */
+public class SubtreeOfAnotherTree {
 
 	@Test
 	public void test1() {
@@ -63,16 +68,16 @@ public class Subtree {
 		Assert.assertTrue(isSubtree(null, null));
 	}
 	
-	public boolean isSubtree(TreeNode T1, TreeNode T2) {
+	public boolean isSubtree(TreeNode s, TreeNode t) {
         
-		if (T2 == null) {
+		if (t == null) {
 			return true;
-		} else if (T1 == null) {
+		} else if (s == null) {
 			return false;
 		} else {
-			return compare(T1, T2) ||
-					(T1.left != null && isSubtree(T1.left, T2)) || 
-					(T1.right != null && isSubtree(T1.right, T2));
+			return compare(s, t) ||
+					(s.left != null && isSubtree(s.left, t)) || 
+					(s.right != null && isSubtree(s.right, t));
 		}
     }
 	

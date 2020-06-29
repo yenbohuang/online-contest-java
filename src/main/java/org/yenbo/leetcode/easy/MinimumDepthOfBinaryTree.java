@@ -1,10 +1,17 @@
-package org.yenbo.lintcode.easy.tree;
+package org.yenbo.leetcode.easy;
 
 import org.junit.Assert;
 import org.junit.Test;
 import org.yenbo.leetcode.TreeNode;
 
-public class MaximumDepthOfBinaryTree {
+/**
+ * https://leetcode.com/problems/minimum-depth-of-binary-tree/
+ * @author user
+ *
+ */
+public class MinimumDepthOfBinaryTree {
+
+	private int answer = Integer.MAX_VALUE;
 	
 	@Test
 	public void test() {
@@ -15,35 +22,35 @@ public class MaximumDepthOfBinaryTree {
 		root.right.left = new TreeNode(4);
 		root.right.right = new TreeNode(5);
 		
-		Assert.assertEquals(3, maxDepth(root));
+		Assert.assertEquals(2, minDepth(root));
 	}
 	
-	public int maxDepth(TreeNode root) {
+	public int minDepth(TreeNode root) {
         
 		if (root == null) {
 			return 0;
 		}
 		
-		return findNode(root, 1);
+		findNode(root, 1);
+		
+		return answer;
     }
 	
-	private int findNode(TreeNode node, int depth) {
+	private void findNode(TreeNode node, int depth) {
 		
 		if (node.left == null && node.right == null) {
-			return depth;
+			
+			if (depth < answer) {
+				answer = depth;
+			}
 		}
 		
-		int leftDepth = -1;
-		int rightDepth = -1;
-		
 		if (node.left != null) {
-			leftDepth = findNode(node.left, depth + 1);
+			findNode(node.left, depth + 1);
 		}
 		
 		if (node.right != null) {
-			rightDepth = findNode(node.right, depth + 1);
+			findNode(node.right, depth + 1);
 		}
-		
-		return (rightDepth > leftDepth) ? rightDepth : leftDepth;
 	}
 }
