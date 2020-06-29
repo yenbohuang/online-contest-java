@@ -1,10 +1,15 @@
-package org.yenbo.leetcode.medium.graph;
+package org.yenbo.leetcode.medium;
 
 import java.util.HashSet;
 
 import org.junit.Assert;
 import org.junit.Test;
 
+/**
+ * https://leetcode.com/problems/course-schedule-ii/
+ * @author user
+ *
+ */
 public class CourseSchedule2 {
 
 	@Test

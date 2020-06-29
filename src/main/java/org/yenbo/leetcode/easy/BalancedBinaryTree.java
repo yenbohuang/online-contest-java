@@ -1,9 +1,14 @@
-package org.yenbo.lintcode.medium.tree;
+package org.yenbo.leetcode.easy;
 
 import org.junit.Assert;
 import org.junit.Test;
 import org.yenbo.leetcode.TreeNode;
 
+/**
+ * https://leetcode.com/problems/balanced-binary-tree/
+ * @author user
+ *
+ */
 public class BalancedBinaryTree {
 
 	@Test

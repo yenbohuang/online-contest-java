@@ -1,4 +1,4 @@
-package org.yenbo.leetcode.medium.graph;
+package org.yenbo.leetcode.medium;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -6,6 +6,11 @@ import java.util.HashSet;
 import org.junit.Assert;
 import org.junit.Test;
 
+/**
+ * https://leetcode.com/problems/course-schedule/
+ * @author user
+ *
+ */
 public class CourseSchedule {
 
 	@Test
