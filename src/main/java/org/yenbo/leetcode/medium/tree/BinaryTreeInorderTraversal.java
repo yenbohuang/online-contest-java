@@ -1,4 +1,4 @@
-package org.yenbo.leetcode.medium;
+package org.yenbo.leetcode.medium.tree;
 
 import java.util.ArrayList;
 import java.util.List;

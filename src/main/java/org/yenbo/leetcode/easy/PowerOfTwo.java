@@ -8,7 +8,7 @@ import org.junit.Test;
  * @author user
  *
  */
-public class O1CheckPowerOf2 {
+public class PowerOfTwo {
 
 	@Test
 	public void test1() {

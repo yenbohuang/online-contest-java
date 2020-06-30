@@ -1,4 +1,4 @@
-package org.yenbo.leetcode.easy;
+package org.yenbo.leetcode.easy.linkedList;
 
 import org.junit.Assert;
 import org.junit.Test;

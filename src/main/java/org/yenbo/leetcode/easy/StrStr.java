@@ -1,4 +1,4 @@
-package org.yenbo.leetcode.todo.easy;
+package org.yenbo.leetcode.easy;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -42,33 +42,47 @@ public class StrStr {
 	
 	@Test
 	public void test7() {
-		// FIXME index out of bound
 		Assert.assertEquals(-1, strStr("mississippi", "sippia"));
+	}
+	
+	@Test
+	public void test8() {
+		Assert.assertEquals(0, strStr("a", "a"));
+	}
+	
+	@Test
+	public void test9() {
+		Assert.assertEquals(9, strStr("mississippi", "pi"));
 	}
 	
 	public int strStr(String haystack, String needle) {
         
-		if (haystack == null || needle == null || haystack.length() < needle.length()) {
+		if (haystack == null || needle == null) {
 			return -1;
 		}
 		
-		if (needle.length() == 0) {
+		int haystackLength = haystack.length();
+		int needleLength = needle.length();
+		
+		if (haystackLength < needleLength) {
+			return -1;
+		}
+		
+		if (needleLength == 0) {
 			return 0;
 		}
 		
-		for (int i = 0; i < haystack.length(); i++) {
+		char firstChar = needle.charAt(0);
+		
+		for (int i = 0; i < haystackLength; i++) {
 			
-			if (haystack.charAt(i) == needle.charAt(0)) {
-				
-				if (haystack.length() - i + 1 < needle.length()) {
-					return -1;
-				}
+			if (haystack.charAt(i) == firstChar) {
 				
 				boolean exactMatch = true;
 				
-				for (int j = 1; j < needle.length(); j++) {
+				for (int j = 0; j < needleLength; j++) {
 					
-					if (haystack.charAt(i + j) != needle.charAt(j)) {
+					if (needle.charAt(j) != haystack.charAt(i + j)) {
 						exactMatch = false;
 						break;
 					}
@@ -77,6 +91,10 @@ public class StrStr {
 				if (exactMatch) {
 					return i;
 				}
+			}
+			
+			if (haystackLength - i - 1 < needleLength) {
+				break;
 			}
 		}
 		

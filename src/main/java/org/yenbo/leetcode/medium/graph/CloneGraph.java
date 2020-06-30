@@ -1,4 +1,4 @@
-package org.yenbo.leetcode.medium;
+package org.yenbo.leetcode.medium.graph;
 
 import java.util.HashMap;
 import java.util.HashSet;

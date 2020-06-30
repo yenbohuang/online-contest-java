@@ -1,4 +1,4 @@
-package org.yenbo.leetcode.medium;
+package org.yenbo.leetcode.medium.linkedList;
 
 import org.junit.Assert;
 import org.junit.Test;

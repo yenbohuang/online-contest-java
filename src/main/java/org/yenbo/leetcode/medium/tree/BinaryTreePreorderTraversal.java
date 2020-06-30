@@ -1,4 +1,4 @@
-package org.yenbo.leetcode.hard;
+package org.yenbo.leetcode.medium.tree;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,11 +8,11 @@ import org.junit.Test;
 import org.yenbo.leetcode.TreeNode;
 
 /**
- * https://leetcode.com/problems/binary-tree-postorder-traversal/
+ * https://leetcode.com/problems/binary-tree-preorder-traversal/
  * @author user
  *
  */
-public class BinaryTreePostorderTraversal {
+public class BinaryTreePreorderTraversal {
 	
 	@Test
 	public void test() {
@@ -21,12 +21,12 @@ public class BinaryTreePostorderTraversal {
 		root.right = new TreeNode(2);
 		root.right.left = new TreeNode(3);
 		
-		Assert.assertArrayEquals(new Integer[] {3,2,1}, postorderTraversal(root).toArray(new Integer[0]));
+		Assert.assertArrayEquals(new Integer[] {1,2,3}, preorderTraversal(root).toArray(new Integer[0]));
 		
 	}
 	
-	public List<Integer> postorderTraversal(TreeNode root) {
-		
+	public List<Integer> preorderTraversal(TreeNode root) {
+        
 		List<Integer> list = new ArrayList<Integer>();
 		
 		if (root != null) {
@@ -38,6 +38,8 @@ public class BinaryTreePostorderTraversal {
 	
 	private void traverse(TreeNode node, List<Integer> list) {
 		
+		list.add(node.val);
+		
 		if (node.left != null) {
 			traverse(node.left, list);
 		}
@@ -45,7 +47,5 @@ public class BinaryTreePostorderTraversal {
 		if (node.right != null) {
 			traverse(node.right, list);
 		}
-		
-		list.add(node.val);
 	}
 }
