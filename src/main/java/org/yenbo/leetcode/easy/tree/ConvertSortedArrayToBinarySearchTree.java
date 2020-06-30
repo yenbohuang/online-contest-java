@@ -1,10 +1,11 @@
-package org.yenbo.leetcode.todo.easy;
+package org.yenbo.leetcode.easy.tree;
 
 import org.junit.Assert;
 import org.junit.Test;
 import org.yenbo.leetcode.TreeNode;
 
 /**
+ * https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/
  * http://algs4.cs.princeton.edu/32bst/
  * 
  * @author YENBO.HUANG
@@ -43,11 +44,11 @@ public class ConvertSortedArrayToBinarySearchTree {
 		TreeNode root = sortedArrayToBST(new int[] {-10,-3,0,5,9});
 		Assert.assertEquals(0, root.val);
 		
-		Assert.assertEquals(-3, root.left.val);
-		Assert.assertEquals(-10, root.left.left.val);
+		Assert.assertEquals(-10, root.left.val);
+		Assert.assertEquals(-3, root.left.right.val);
 		
-		Assert.assertEquals(9, root.right.val);
-		Assert.assertEquals(5, root.right.left.val);
+		Assert.assertEquals(5, root.right.val);
+		Assert.assertEquals(9, root.right.right.val);
 	}
 
 	public TreeNode sortedArrayToBST(int[] nums) {
